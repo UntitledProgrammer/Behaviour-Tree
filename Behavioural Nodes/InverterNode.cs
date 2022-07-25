@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Behaviour
 {
     /// <summary>An inverter is a decorator node that when invoked returns a status opposite to the result of it's child node.</summary>
-    [CreateAssetMenu(fileName = "Inverter_node", menuName = "Behaviour_Tree/Inverter_node")]
+    [CreateAssetMenu(fileName = "Inverter_Node", menuName = "Behaviour_Tree/Inverter_Node")]
     public class InverterNode : DecoratorNode
     {
         //Derived methods:
