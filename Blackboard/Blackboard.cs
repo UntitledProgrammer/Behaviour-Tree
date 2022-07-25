@@ -7,15 +7,17 @@ namespace Behaviour.Storage
     public class Blackboard
     {
         //Attributes:
-        Dictionary<string, Board> boards;
+        Dictionary<string, GenericBoard<object>> boards;
 
         //Methods:
-        public void Set<Type>(string key, Type value) { boards[key] = new GenericBoard<Type>(key, value); }
+        public void Set(string key, object value) { boards[key] = new GenericBoard<object>(key, value); }
         public Type Get<Type>(string key)
         {
             if (!boards.ContainsKey(key)) return default;
-            //return (boards[key]) as GenericBoard<Type>        }
-            return default;
+            
+            return (Type)boards[key].GetValue();
         }
+
+        public void Empty() { boards.Clear(); }
     }
 }
