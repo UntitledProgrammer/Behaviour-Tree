@@ -1,3 +1,4 @@
+using Behaviour.Storage;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ namespace Behaviour.Development
         public string message = "Default_Message";
 
         //Derived Methods:
-        public override Behaviour.Status Invoke()
+        public override Behaviour.Status Invoke(Blackboard blackboard)
         {
             Debug.Log(message);
 

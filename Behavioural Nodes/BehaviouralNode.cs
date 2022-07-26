@@ -1,3 +1,4 @@
+using Behaviour.Storage;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace Behaviour
         //Abstract methods:
 
         /// <summary>All behaviour and game logic should exist within the scope of the invoke method.</summary>
-        public abstract Status Invoke();
+        public abstract Status Invoke(Blackboard blackboard);
         /// <summary>Invoked when a behaviour has completed it's cycle.</summary>
         public abstract void Terminate();
         /// <summary>Invoked once before a new behaviour is invoked.</summary>

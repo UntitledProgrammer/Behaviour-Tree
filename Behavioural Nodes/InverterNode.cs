@@ -1,3 +1,4 @@
+using Behaviour.Storage;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +10,9 @@ namespace Behaviour
     public class InverterNode : DecoratorNode
     {
         //Derived methods:
-        public override Status Invoke()
+        public override Status Invoke(Blackboard blackboard)
         {
-            switch(child.Invoke())
+            switch(child.Invoke(blackboard))
             {
                 case Status.Running: return Status.Running;
                 case Status.Failure: return Status.Success;

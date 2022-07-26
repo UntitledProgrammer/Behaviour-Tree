@@ -1,3 +1,4 @@
+using Behaviour.Storage;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,11 +11,11 @@ namespace Behaviour
     public class SelectorNode : CompositeNode
     {
         //Derived methods:
-        public override Status Invoke()
+        public override Status Invoke(Blackboard blackboard)
         {
             for(int i = 0; i < children.Count; i++)
             {
-                if (children[i].Invoke() == Status.Success) return Status.Success; //If branch is successfull exit invocation.
+                if (children[i].Invoke(blackboard) == Status.Success) return Status.Success; //If branch is successfull exit invocation.
             }
 
             return Status.Failure; //Return failure if all branches fail to invoke.

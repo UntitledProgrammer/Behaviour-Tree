@@ -1,3 +1,4 @@
+using Behaviour.Storage;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,11 +22,11 @@ namespace Behaviour
         public void AddChildren(BehaviouralNode[] nodes) { children.AddRange(nodes); }
 
         //Derived Methods:
-        public override Status Invoke()
+        public override Status Invoke(Blackboard blackboard)
         {
             for(int i = 0; i < children.Count; i++)
             {
-                switch(children[i].Invoke())
+                switch(children[i].Invoke(blackboard))
                 {
                     case Status.Success: continue; //Continue to the next child if invocation was successful.
                     case Status.Failure: return Status.Failure; //Return failure if the child node fails.

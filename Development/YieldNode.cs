@@ -1,3 +1,4 @@
+using Behaviour.Storage;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,7 @@ namespace Behaviour.Development
         public Behaviour.Status status = Behaviour.Status.Success;
 
         //Derived methods:
-        public override Behaviour.Status Invoke()
+        public override Behaviour.Status Invoke(Blackboard blackboard)
         {
             return status;
         }

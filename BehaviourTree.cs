@@ -11,6 +11,7 @@ namespace Behaviour
     {
         //Attributes:
         private BehaviouralNode root;
+        private Storage.Blackboard blackboard;
 
         //Constructor:
         public BehaviourTree(BehaviouralNode root)
@@ -23,7 +24,7 @@ namespace Behaviour
         {
             if (root == null) return;
 
-            root.Invoke();
+            root.Invoke(blackboard);
         }
     }
 }
